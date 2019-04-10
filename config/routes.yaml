@@ -1,3 +1,5 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+stub:
+    path: /{path}
+    controller: App\Controller\StubController::stubRequest
+    requirements:
+        path: .*
