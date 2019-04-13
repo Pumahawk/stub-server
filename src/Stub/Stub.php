@@ -8,9 +8,9 @@ use App\Exceptions\StubHttpResponseException;
 
 class Stub {
   
-  public $url;
-  public $method;
-  public $response;
+  private $url;
+  private $method;
+  private $response;
   
   public function __construct($url = null, $method = null, $response = null) {
     if($url != null) {
@@ -62,6 +62,18 @@ class Stub {
       throw new StubHttpResponseException("La richiesta inserita deve essere un array", 1);
       
     }
+  }
+  
+  public function getUrl() {
+    return $this -> url;
+  }
+  
+  public function getMethod() {
+    return $this -> method;
+  }
+  
+  public function getResponse() {
+    return $this -> response;
   }
 
 }

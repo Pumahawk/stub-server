@@ -11,15 +11,15 @@ use App\Exceptions\StubHttpResponseException;
 class StubTest extends TestCase {
   public function testIstance() {
     $stub = new Stub();
-    $this -> assertEquals(null, $stub -> url);
-    $this -> assertEquals(null, $stub -> method);
-    $this -> assertEquals(null, $stub -> response);
+    $this -> assertEquals(null, $stub -> getUrl());
+    $this -> assertEquals(null, $stub -> getMethod());
+    $this -> assertEquals(null, $stub -> getResponse());
   }
   
   public function testSetUrl() {
     $stub = new Stub();
     $stub -> setUrl('/request/stub.json');
-    $this -> assertEquals('/request/stub.json', $stub -> url);
+    $this -> assertEquals('/request/stub.json', $stub -> getUrl());
     try {
       $stub -> setUrl(null);
       $this -> assertTrue(false);
@@ -37,7 +37,7 @@ class StubTest extends TestCase {
   public function testSetMethod() {
     $stub = new Stub();
     $stub -> setMethod('GET');
-    $this -> assertEquals('GET', $stub -> method);
+    $this -> assertEquals('GET', $stub -> getMethod());
     try {
       $stub -> setMethod(null);
       $this -> assertTrue(false);
@@ -61,7 +61,7 @@ class StubTest extends TestCase {
   public function testSetResponse() {
     $stub = new Stub();
     $stub -> setResponse(['test']);
-    $this -> assertEquals(['test'], $stub -> response);
+    $this -> assertEquals(['test'], $stub -> getResponse());
     try {
       $stub -> setResponse(null);
       $this -> assertTrue(false);
