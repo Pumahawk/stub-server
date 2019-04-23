@@ -13,6 +13,9 @@ class StubLoader extends FileLoader {
   public function load($resource, $type = null) {
       $path = $this -> locator -> locate($resource);
       $configValues = json_decode(file_get_contents($path), true);
+      if ($configValues['version'] != '0.0.1') {
+        throw \Exception('Versione stub non supportata');
+      }
       $stubList = [];
       foreach($configValues['stubs'] as $stub) {
         $stubList[] = new Stub($stub['url'], $stub['method'], $stub['response']);
