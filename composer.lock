@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1365f11fe4d7830bfa038db7b8a6acc",
+    "content-hash": "6953a288482b10a00e3639786a0e55fa",
     "packages": [
         {
             "name": "psr/cache",
@@ -275,7 +275,7 @@
         },
         {
             "name": "symfony/config",
-            "version": "v4.2.5",
+            "version": "v4.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
