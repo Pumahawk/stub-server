@@ -1,0 +1,21 @@
+{
+  "version": "0.0.1",
+  "stubs": [
+    {
+      "url": "/path/stub",
+      "method": "GET",
+      "response": {
+        "name": "First stub",
+        "description": "Creazione primo stub."
+      }
+    },
+    {
+      "url": "/path/stub1",
+      "method": "GET",
+      "response": {
+        "name": "Second stub",
+        "description": "Creazione secondo stub."
+      }
+    }
+  ]
+}

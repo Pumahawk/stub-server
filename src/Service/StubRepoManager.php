@@ -6,7 +6,7 @@ use App\Stub\StubRepository;
 class StubRepoManager {
   protected $stubRepo;
   public function __construct() {
-    $this -> stubRepo = new StubRepository($_ENV['STUB_FOLDER']);
+    $this -> stubRepo = StubRepository::loadFromDirectory($_ENV['STUB_FOLDER']);
   }
   public function getStubRepo() {
     return $this -> stubRepo;

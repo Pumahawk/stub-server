@@ -2,7 +2,7 @@ home:
     path: /manager
     controller: App\Controller\ExplorerController::home
 stub:
-    path: /stub/{path}
+    path: /stub{path}
     controller: App\Controller\StubController::stubRequest
     requirements:
         path: .*

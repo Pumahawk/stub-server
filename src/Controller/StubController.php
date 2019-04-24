@@ -8,12 +8,10 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Service\StubRepoManager;
 
 class StubController {
-  public function stubRequest(StubRepoManager $stubManager) {
+  public function stubRequest($path, StubRepoManager $stubManager) {
     
-    $stubManager -> getStubRepo() -> getStub();
+    $stub = $stubManager -> getStubRepo() -> getByUrl($path);
     
-    return new JsonResponse([
-      'title' => 'rispsota in json'
-    ]);
+    return new JsonResponse($stub ? $stub -> getResponse(): false);
   }
 }
