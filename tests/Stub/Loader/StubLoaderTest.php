@@ -16,6 +16,7 @@ class StubTest extends TestCase {
     $stub = $loader -> load($pathResource);
     
     $expected = [new Stub('/api/login', 'GET', ['token' => '12345token54321'])];
+    $expected[0] -> setFile('resources/stub/stub.json');
     
     $this -> assertEquals($expected, $stub);
   }

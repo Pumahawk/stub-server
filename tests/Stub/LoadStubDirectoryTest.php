@@ -50,6 +50,9 @@ class LoadStubDirectoryTest extends TestCase {
       new Stub('/stub/1', 'GET', ['name' => 'stub1']),
       new Stub('/stub/2', 'GET', ['name' => 'stub2']),
     ];
+    $expectedStub[0] -> setFile('./resources/recursive/stub0.json');
+    $expectedStub[1] -> setFile('./resources/recursive/stub1.json');
+    $expectedStub[2] -> setFile('./resources/recursive/sub/stub2.json');
     
     $this -> assertEquals($expectedStub, $stubRepo -> listStub);
   }

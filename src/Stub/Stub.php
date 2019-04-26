@@ -11,6 +11,7 @@ class Stub {
   private $url;
   private $method;
   private $response;
+  private $file;
   
   public function __construct($url = null, $method = null, $response = null) {
     if($url != null) {
@@ -74,6 +75,14 @@ class Stub {
   
   public function getResponse() {
     return $this -> response;
+  }
+  
+  public function setFile($file) {
+    $this -> file = $file;
+  }
+  
+  public function getFile() {
+    return $this -> file;
   }
 
 }

@@ -29,9 +29,15 @@ class StubRepositoryTest extends TestCase {
     $repo = StubRepository::loadFromDirectory($directory);
     
     $expected = new StubRepository();
-    $expected -> addStub(new Stub('/stub/0', 'GET', ['name' => 'stub0']));
-    $expected -> addStub(new Stub('/stub/1', 'GET', ['name' => 'stub1']));
-    $expected -> addStub(new Stub('/stub/2', 'GET', ['name' => 'stub2']));
+    $stub = new Stub('/stub/0', 'GET', ['name' => 'stub0']);
+    $stub -> setFile('resources/recursive/stub0.json');
+    $expected -> addStub($stub);
+    $stub = new Stub('/stub/1', 'GET', ['name' => 'stub1']);
+    $stub -> setFile('resources/recursive/stub1.json');
+    $expected -> addStub($stub);
+    $stub = new Stub('/stub/2', 'GET', ['name' => 'stub2']);
+    $stub -> setFile('resources/recursive/sub/stub2.json');
+    $expected -> addStub($stub);
     
     $this -> assertEquals($expected, $repo);
   }

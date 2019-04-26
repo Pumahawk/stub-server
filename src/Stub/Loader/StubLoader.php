@@ -18,7 +18,9 @@ class StubLoader extends FileLoader {
       }
       $stubList = [];
       foreach($configValues['stubs'] as $stub) {
-        $stubList[] = new Stub($stub['url'], $stub['method'], $stub['response']);
+        $tmpStub = new Stub($stub['url'], $stub['method'], $stub['response']);
+        $tmpStub -> setFile($path);
+        $stubList[] = $tmpStub;
       }
       return $stubList;
   }
