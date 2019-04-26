@@ -9,3 +9,6 @@ stub:
 rest-get-all:
     path: /explorer/getAll
     controller: App\Controller\RestExplorerController::getAllStub
+rest-get-by-url:
+    path: /explorer/getByUrl
+    controller: App\Controller\RestExplorerController::getByUrl
