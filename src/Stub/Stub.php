@@ -9,20 +9,14 @@ use App\Exceptions\StubHttpResponseException;
 class Stub {
   
   private $url;
-  private $method;
   private $response;
   private $file;
   
-  public function __construct($url = null, $method = null, $response = null) {
+  public function __construct($url = null, $response = null) {
     if($url != null) {
       $this -> setUrl($url);
     } else {
       $this -> url = $url;
-    }
-    if ($method != null) {
-      $this -> setMethod($method);
-    } else {
-      $this -> method = $method;
     }
     if($response != null) {
       $this -> setResponse($response);
@@ -39,22 +33,6 @@ class Stub {
     }
   }
   
-  public function setMethod($method) {
-    if(!is_string($method)) {
-      throw new StubHttpMethodException("Il metodo deve essere una stringa", 1);
-    }
-    
-    switch ($method) {
-      case 'GET':
-      case 'POST':
-        $this -> method = $method;
-        break;
-      default:
-        throw new StubHttpMethodException("Metodo $method non supportato", 1);
-        break;
-    }
-  }
-  
   
   public function setResponse($response) {
     if(is_array($response)) {
@@ -67,10 +45,6 @@ class Stub {
   
   public function getUrl() {
     return $this -> url;
-  }
-  
-  public function getMethod() {
-    return $this -> method;
   }
   
   public function getResponse() {

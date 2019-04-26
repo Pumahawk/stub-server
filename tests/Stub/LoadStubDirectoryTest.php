@@ -46,9 +46,9 @@ class LoadStubDirectoryTest extends TestCase {
     }
     
     $expectedStub = [
-      new Stub('/stub/0', 'GET', ['name' => 'stub0']),
-      new Stub('/stub/1', 'GET', ['name' => 'stub1']),
-      new Stub('/stub/2', 'GET', ['name' => 'stub2']),
+      new Stub('/stub/0', ['name' => 'stub0']),
+      new Stub('/stub/1', ['name' => 'stub1']),
+      new Stub('/stub/2', ['name' => 'stub2']),
     ];
     $expectedStub[0] -> setFile('./resources/recursive/stub0.json');
     $expectedStub[1] -> setFile('./resources/recursive/stub1.json');

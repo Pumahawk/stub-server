@@ -12,6 +12,6 @@ class StubController {
     
     $stub = $stubManager -> getStubRepo() -> getByUrl($path);
     
-    return new JsonResponse($stub ? $stub -> getResponse(): false);
+    return $stub ? new JsonResponse($stub -> getResponse()) : new Response(null, Response::HTTP_NOT_FOUND);
   }
 }

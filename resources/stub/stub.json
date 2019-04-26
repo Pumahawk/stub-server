@@ -3,7 +3,6 @@
   "stubs": [
     {
       "url": "/api/login",
-      "method": "GET",
       "response": {
         "token": "12345token54321"
       }
