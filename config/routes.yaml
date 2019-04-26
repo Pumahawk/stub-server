@@ -6,3 +6,6 @@ stub:
     controller: App\Controller\StubController::stubRequest
     requirements:
         path: .*
+rest-get-all:
+    path: /explorer/getAll
+    controller: App\Controller\RestExplorerController::getAllStub
