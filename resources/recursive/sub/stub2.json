@@ -3,7 +3,6 @@
   "stubs": [
     {
       "url": "/stub/2",
-      "method": "GET",
       "response": {
         "name": "stub2"
       }

@@ -12,7 +12,6 @@ class StubTest extends TestCase {
   public function testIstance() {
     $stub = new Stub();
     $this -> assertEquals(null, $stub -> getUrl());
-    $this -> assertEquals(null, $stub -> getMethod());
     $this -> assertEquals(null, $stub -> getResponse());
   }
   
@@ -30,30 +29,6 @@ class StubTest extends TestCase {
       $stub -> setUrl(new Stub());
       $this -> assertTrue(false);
     } catch (StubHttpUrlException $exception) {
-      $this -> assertTrue(true);
-    }
-  }
-  
-  public function testSetMethod() {
-    $stub = new Stub();
-    $stub -> setMethod('GET');
-    $this -> assertEquals('GET', $stub -> getMethod());
-    try {
-      $stub -> setMethod(null);
-      $this -> assertTrue(false);
-    } catch(StubHttpMethodException $exception) {
-      $this -> assertTrue(true);
-    }
-    try {
-      $stub -> setMethod('string');
-      $this -> assertTrue(false);
-    } catch (StubHttpMethodException $exception) {
-      $this -> assertTrue(true);
-    }
-    try {
-      $stub -> setMethod(new Stub());
-      $this -> assertTrue(false);
-    } catch (StubHttpMethodException $exception) {
       $this -> assertTrue(true);
     }
   }
