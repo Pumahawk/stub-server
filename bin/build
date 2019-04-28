@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cp -r src build/dist
+cp .env build/dist
+cp composer.json build/dist
+cp -r public build/dist
+cp -r config build/dist

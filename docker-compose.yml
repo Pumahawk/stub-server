@@ -1,0 +1,9 @@
+version: "2"
+services:
+  stub:
+    build:
+      context: ./build
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:80"
+      
