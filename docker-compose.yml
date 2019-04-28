@@ -1,9 +1,12 @@
 version: "2"
 services:
+  proxy:
+    build:
+      context: ./build
+      dockerfile: docker/Dockerfile.proxy
+    ports:
+      - "8080:80"
   stub:
     build:
       context: ./build
       dockerfile: docker/Dockerfile
-    ports:
-      - "8080:80"
-      
