@@ -10,3 +10,5 @@ services:
     build:
       context: ./build
       dockerfile: docker/Dockerfile
+    volumes:
+      - ./public/dev-request:/stubs

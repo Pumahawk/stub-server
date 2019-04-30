@@ -2,4 +2,3 @@ FROM httpd:alpine
 
 COPY docker/conf/httpd.conf /usr/local/apache2/conf/httpd.conf
 COPY docker/conf/reverse-proxy.conf /usr/local/apache2/conf/extra/reverse-proxy.conf
-
